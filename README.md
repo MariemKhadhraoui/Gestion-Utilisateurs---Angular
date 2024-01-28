@@ -1,27 +1,36 @@
 # GestionUtilisateurs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
-## Development server
+# Gestion d'Utilisateurs avec Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ce projet Angular offre une interface conviviale pour la gestion des utilisateurs. Il permet d'afficher, ajouter, modifier et supprimer des utilisateurs. La pagination est intégrée pour une navigation aisée à travers la liste des utilisateurs.
 
-## Code scaffolding
+## Fonctionnalités
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Affichage de la liste des utilisateurs avec pagination.
+- Ajout d'un nouvel utilisateur.
+- Modification des informations d'un utilisateur existant.
+- Suppression d'un utilisateur.
+- Fonction de recherche pour filtrer les utilisateurs.
 
-## Build
+## Prérequis
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Assurez-vous d'avoir Node.js et Angular CLI installés sur votre machine.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clonez le dépôt : `git clone https://github.com/MariemKhadhraoui/Gestion-Utilisateurs---Angular.git`
+2. Accédez au répertoire : `cd Gestion-Utilisateurs---Angular`
+3. Installez les dépendances : `npm install`
 
-## Running end-to-end tests
+## Exécution du Projet
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Exécutez `ng serve` pour lancer le serveur de développement. Naviguez vers `http://localhost:4200/` dans votre navigateur.
 
-## Further help
+## Auteur
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[MariemKhadhraoui]
+
+
+
