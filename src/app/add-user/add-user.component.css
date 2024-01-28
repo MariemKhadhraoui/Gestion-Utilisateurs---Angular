@@ -1,0 +1,15 @@
+/* add-user.component.css */
+
+.alert {
+    animation: fadeOut 3s ease-out forwards; /* Animation de disparition après 3 secondes */
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: translateY(-50px); /* Déplacement vers le haut pendant la disparition */
+    }
+  }
+  .custom-width {
+    width: 100%; /* Ajustez cette valeur en fonction de vos besoins */
+  }

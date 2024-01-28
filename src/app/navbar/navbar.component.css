@@ -1,0 +1,26 @@
+/* navbar.component.css */
+
+.navbar {
+  border-bottom: 2px solid #007bff; /* Bordure bleue en bas de la navbar */
+}
+
+.navbar-brand {
+  color: #007bff; /* Couleur bleue pour le texte de la marque */
+}
+
+.navbar-nav .nav-item {
+  border: 1px solid transparent; /* Bordure transparente pour les éléments de la navbar */
+}
+
+.navbar-nav .nav-item.active {
+  border: 1px solid #007bff; /* Bordure bleue pour l'élément actif */
+  border-radius: 5px; /* Coins arrondis pour l'élément actif */
+}
+
+.navbar-nav .nav-link {
+  color: #007bff; /* Couleur bleue pour les liens de la navbar */
+}
+
+.navbar-toggler-icon {
+  background-color: #007bff; /* Couleur bleue pour l'icône du bouton de bascule */
+}

@@ -1,0 +1,93 @@
+<div class="container mt-5">
+  <h3 class="text-center mb-4">Ajouter un utilisateur</h3>
+
+  <div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+      <form (ngSubmit)="addUser()" #userForm="ngForm">
+
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-4 col-form-label font-weight-bold"><strong> Nom :</strong></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control custom-width" id="name" name="name" [(ngModel)]="user.name" placeholder="Entrez le nom"
+              required>
+            <div *ngIf="userForm.controls['name'].invalid && userForm.controls['name'].touched" class="text-danger">
+              Le nom est obligatoire.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="username" class="col-sm-4 col-form-label font-weight-bold"><strong>Nom utilisateur :</strong></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username"
+              placeholder="Entrez le nom d'utilisateur" required>
+            <div *ngIf="userForm.controls['username'].invalid && userForm.controls['username'].touched"
+              class="text-danger">
+              Le nom d'utilisateur est obligatoire.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-4 col-form-label font-weight-bold"><strong>Adresse e-mail : </strong></label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email"
+              placeholder="Entrez l'adresse e-mail" required>
+            <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched" class="text-danger">
+              Veuillez saisir une adresse e-mail valide.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="address" class="col-sm-4 col-form-label font-weight-bold"><strong>Adresse : </strong></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="user.address"
+              placeholder="Entrez l'adresse" required>
+            <div *ngIf="userForm.controls['address'].invalid && userForm.controls['address'].touched"
+              class="text-danger">
+              L'adresse est obligatoire.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="phone" class="col-sm-4 col-form-label font-weight-bold"><strong>Téléphone : </strong></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="user.phone"
+              placeholder="Entrez le téléphone" required>
+            <div *ngIf="userForm.controls['phone'].invalid && userForm.controls['phone'].touched" class="text-danger">
+              Le téléphone est obligatoire.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="company" class="col-sm-4 col-form-label font-weight-bold"><strong>Entreprise :</strong></label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="company" name="company" [(ngModel)]="user.company"
+              placeholder="Entrez le nom de l'entreprise" required>
+            <div *ngIf="userForm.controls['company'].invalid && userForm.controls['company'].touched"
+              class="text-danger">
+              L'entreprise est obligatoire.
+            </div>
+          </div>
+        </div>
+
+         <div class="mb-3 d-flex justify-content-end">
+        
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelAdd()">Annuler</button>
+          </div>
+        
+        
+
+        <!-- Alerte de succès -->
+        <div *ngIf="ajoutReussi" class="alert alert-success mt-3" role="alert">
+          L'utilisateur a été ajouté avec succès.
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="container mt-5">
+  <h3 style="color: blue;">Liste des utilisateurs</h3>
+
+  <!-- Barre de recherche -->
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Rechercher par nom" [(ngModel)]="searchText">
+    <button class="btn btn-outline-primary" (click)="searchUsers()">Rechercher</button>
+    <button class="btn btn-outline-primary" (click)="resetSearch()">Actualiser</button>
+  </div>
+
+  <div class="table-responsive">
+  
+    <table class="table table-bordered">
+
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Nom d'utilisateur</th>
+          <th scope="col">Email</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Téléphone</th>
+          <th scope="col">Site Web</th>
+          <th scope="col">Entreprise</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of pagedUsers"> <!-- Utilisez pagedUsers à la place de filteredUsers -->
+          <td>{{ item.name }}</td>
+          <td>{{ item.username }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.website }}</td>
+          <td>{{ item.company}}</td>
+  
+          <td>
+            <!-- Ajout d'icônes pour les actions avec Font Awesome -->
+            <button type="button" class="btn btn-primary" name="Détails" (click)="detailUser(item)"><i class="fas fa-info-circle"></i></button>
+            <button type="button" class="btn btn-danger" name="delete" (click)="deleteUser(item)"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" class="btn btn-warning" name="update" (click)="editUser(item)"><i class="fas fa-edit"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination-container">
+      <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+  </div>
+  
+  
+
+  <!-- Modale pour afficher les détails de l'utilisateur -->
+  <div class="modal fade" id="userDetailsModal" tabindex="-1" aria-labelledby="userDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userDetailsModalLabel">Détails de l'utilisateur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Utilisez selectedUser pour afficher les détails de l'utilisateur -->
+          <p>Nom: {{ selectedUser?.name }}</p>
+          <p>Nom d'utilisateur: {{ selectedUser?.username }}</p>
+          <p>Email: {{ selectedUser?.email }}</p>
+          <!-- Ajoutez d'autres champs selon vos besoins -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
